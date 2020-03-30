@@ -3,8 +3,15 @@ import os
 import traceback
 
 bot = commands.Bot(command_prefix='s!')
-token = os.environ['DISCORD_BOT_TOKEN']
+token = "DISCORD_BOT_TOKEN"
 
+admin = [418812526470365214, 446996726335799297]
+
+@bot.event
+async def on_reaction_add(reaction, user):
+    if user.id in admin:
+        message = reaction.message:
+        await message.add_reaction(f"{reaction}")
 
 @bot.event
 async def on_command_error(ctx, error):
