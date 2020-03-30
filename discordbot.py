@@ -15,10 +15,6 @@ async def on_reaction_add(reaction, user):
         message = reaction.message:
         await message.add_reaction(f"{reaction}")
 
-@bot.event
-async def on_command_error(ctx, error):
-    await ctx.send(str(error))
-
 
 @bot.command()
 async def ping(ctx):
